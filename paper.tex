@@ -6,6 +6,16 @@
 \usepackage{graphicx} 
 \usepackage{float}
 \usepackage{wrapfig}
+\usepackage{pgfplots}
+
+\pgfplotsset{width = 5cm, compat=1.13}
+\pgfplotsset{every axis/.append style={
+    axis x line=middle,    % put the x axis in the middle
+    axis y line=middle,    % put the y axis in the middle
+    axis line style={<->}, % arrows on the axis
+    },
+    cmhplot/.style={color=blue,mark=none,line width=1pt,<->},
+}
 
 \begin{document}
 	\title{Multimedia processing using machine learning}
@@ -42,11 +52,64 @@ In recurrent neural network (RNN) connections between the neurons form a directe
 \end{figure}
 
 \subsection{Activation function}
-The activation function defines the output of considered neuron with given input. There are many functions that can be used as an activation function in artificial neural networks.
+The activation function defines the output of considered neuron with given input. There are many functions that can be used as an activation function in artificial neural networks. The most popular are:
 \subsubsection{Linear}
-\subsubsection{Rectified Linear Unit (ReLU}
+\begin{center}
+$ f(x)=ax + b $ \\ $ a,b \in R $ \\~\\
+\begin{tikzpicture}
+	\begin{axis}
+		\addplot[cmhplot,-]{x};
+	\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\subsubsection{Rectified Linear Unit (ReLU)}
+\[
+f(x)=
+\left\{
+\begin{array}{ll}
+      0 ,& x < 0 \\
+      x ,& x\geq 0 \\
+\end{array} 
+\right. \]
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[
+            xmin=-4,xmax=4,
+            ymin=-4,ymax=4,
+        ]
+        \addplot[cmhplot,-,domain=-4:0]{0};
+        \addplot[cmhplot,-,domain=0:4]{x};
+
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
 \subsubsection{Sigmoid}
+\begin{center}
+$f(x) = \frac{1}{1 + e^{-x}}$ \\
+\begin{tikzpicture}
+    \begin{axis}[
+            xmin=-5,xmax=5,
+            ymin=-1,ymax=1,
+        ]
+        \addplot[cmhplot,-]{1/(1 + e^(-x))};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
 \subsubsection{TanH}
+\begin{center}
+$ f(x)=\tanh(x)=\frac{2}{1+e^{-2x}}-1 $ \\
+\begin{tikzpicture}
+    \begin{axis}[
+            xmin=-5,xmax=5,
+            ymin=-1,ymax=1,
+        ]
+        \addplot[cmhplot,-]{2/(1 + e^(-2*x))-1};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
 
 \section{Architecture}
 \section{Experiments}
