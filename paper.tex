@@ -125,7 +125,7 @@ $ f(x)=\tanh(x)=\frac{2}{1+e^{-2x}}-1 $ \\
 
 \section{Architecture}
 The solution for our problem is fully connected 4-hidden-layer neural network.
-\begin{tikzpicture}[x=1.5cm, y=1.5cm, >=stealth]
+\begin{tikzpicture}[x=1.3cm, y=1.5cm, >=stealth]
 
 \foreach \m/\l [count=\y] in {1,2,3}
 {
@@ -201,28 +201,28 @@ The solution for our problem is fully connected 4-hidden-layer neural network.
     node [above, midway] {$I_{\l}$};
 
 \foreach \l [count=\i] in {1}
-  \node [above] at (hidden1-\i.north) {$H_{\l}$};
+  \node [above] at (hidden1-\i.north) {$H^{(i)}_{\l}$};
 
 \foreach \l [count=\i] in {1}
-  \node [above] at (hidden2-\i.north) {$H_{\l}$};
+  \node [above] at (hidden2-\i.north) {$H^{(ii)}_{\l}$};
 
 \foreach \l [count=\i] in {1}
-  \node [above] at (hidden3-\i.north) {$H_{\l}$};
+  \node [above] at (hidden3-\i.north) {$H^{(iii)}_{\l}$};
 
 \foreach \l [count=\i] in {1}
-  \node [above] at (hidden4-\i.north) {$H_{\l}$};
+  \node [above] at (hidden4-\i.north) {$H^{(iv)}_{\l}$};
 
 \foreach \l [count=\i] in {1024}
-  \node [below] at (hidden1-4.south) {$H_{\l}$};
+  \node [below] at (hidden1-4.south) {$H^{(i)}_{\l}$};
 
 \foreach \l [count=\i] in {1024}
-  \node [below] at (hidden2-4.south) {$H_{\l}$};
+  \node [below] at (hidden2-4.south) {$H^{(ii)}_{\l}$};
 
 \foreach \l [count=\i] in {256}
-  \node [below] at (hidden3-4.south) {$H_{\l}$};
+  \node [below] at (hidden3-4.south) {$H^{(iii)}_{\l}$};
 
 \foreach \l [count=\i] in {56}
-  \node [below] at (hidden4-4.south) {$H_{\l}$};
+  \node [below] at (hidden4-4.south) {$H^{(iv)}_{\l}$};
 
 
 
