@@ -1,6 +1,12 @@
 \subsection{Neural networks}
 \subsubsection{Fully connected neural network}
-todo
+A fully connected neural network (FCNN) is such a neural network in which each neuron is connected to every neuron in the previous layer and each connection has its own weight. \par This is a general purpose connection pattern and makes no assumptions about the features in the input data to recognize. This type of network is very expensive in terms of memory (weights) and computations (connections).
+\begin{figure}[H]
+\centering
+\includegraphics[width=250px]{pictures/fcnn.png}
+\caption{Fully connected neural network}
+\end{figure}
+
 \subsubsection{Convolutional neural network}
 Convolutional neural network (CNN) is a type of feed-forward artificial neural network, which means that connections between the neurons do not form a cycle. Information in the network moves only forward so the given signal goes through the neuron once.
 \par CNN includes a convolutional layer and usually few other hidden layers. Each neuron is connected only to a small region of the previous layer called receptive field. Receptive fields of different neurons are overlapping with other neuron's fields so that together they are covering the whole input.
