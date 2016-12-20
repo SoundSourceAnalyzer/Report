@@ -1,1 +1,45 @@
-For experiments data from \cite{data} was used. Only Training dataset had labels, so it was randomly split in half, so that both the training and test datasets contained of $6248$ observations. Duplicate columns were dropped before feeding the neural network. After using different configuration settings training procedure was established on $3001$ steps with batches of size $128$ observations.  We have made experiments, tuning our neural network parameters and get $96.4\%$ accuracy on test data.
+\subsubsection{ISMIS Dataset}
+ Initially, data from \cite{data} was used. The sample ISMIS dataset provided to the contestants consists of nearly 26000 separate audio tracks from 10 genres. Each track is already processed and represent in the form of audio features. The dataset has been divided into two equally-sized datasets - one for training the network, and one for testing. Solutions, that is the information about the genre of each track has only been provided for the train dataset. Table 1 lists the percentage results of top competitors:
+\begin{table}[h]
+	\centering
+	\caption{ISMIS contestants results}
+	\label{my-label}
+	\begin{tabular}{|l|l|l|ll}
+		\cline{1-3}
+		Rank & Team      & Final Result &  &  \\ \cline{1-3}
+		1    & domcastro & 0.87507      &  &  \\ \cline{1-3}
+		2    & tester    & 0.87270      &  &  \\ \cline{1-3}
+		3    & wahoo     & 0.83066      &  &  \\ \cline{1-3}
+	\end{tabular}
+\end{table}
+
+As we can observe, the best score achieved in the challange is 87.507\% classfication success rate. 
+In order to replicate the contest, due to lack of solutions for the entire dataset we have based our reserach solely on the train dataset. The initial 13000 dataset has been divided into two smaller groups, each spanning 6500 tracks. Odd tracks were chosen for the test set, and even tracks for the train set. Furthermore, the dataset order has been randomized to increase scientific accuracy of our study. 
+
+The network has been trained with the train dataset in 3000 steps. After the training, the net has been tested against the test dataset. We were able to achieve an impressive result of 96.4\% classfication success rate, a significant improval over results achieved by the competitors in the study. 
+
+\subsubsection{GZTAN Dataset}
+Second round of experiments was focused on data from \cite{gztan}. The GZTAN dataset consists of 1000 audio tracks, each 30 seconds long, divided into 10 genres, represented by 100 tracks each. All tracks are 20050Hz Mono 16-bit audio files in .wav format. Because of this additional work to extract sound characteristics from each track was required. The goal was to replicate the features present in \cite{data} as closely as possible, due to posivite results with such data. 145 distinct descriptors for each audio file were extracted, described in detail in previous sections. \newline
+Due to signifant diffrences between descriptor values, normalization was performed. Each descriptor was recalculated with the following formula:
+\begin{center}
+	$d` = \frac{d - \mu}{\sigma}  $ \\~\\
+\end{center}
+The network configuration remained unchaged from previous experiment. Suprisingly, a success rate of only 63.66\% was achieved. Dataset reduction was performed to see if less categories would yield better results. 
+
+\begin{table}[h]
+	\centering
+	\caption{GZTAN success rate \% vs category count}
+	\label{my-label}
+	\begin{tabular}{|l|l|l|l|l|l|}
+		\cline{1-6}
+		Category count & 6 & 7 &  8 & 9 & 10  \\ \cline{1-6}
+		Dataset size   & 600 & 700 & 800 & 900 & 1000 \\ \cline{1-6}
+		Success rate   & 75.06\% & 67.78\% & 64.48 \% & 64.08\% & 63.66\% \\ \cline{1-6}
+	\end{tabular}
+\end{table}
+
+As presented in Table II, the performance of the neural network did not improve to satisfactory results along with the dataset reduction.
+
+\subsubsection{Summary} Further investigation did not provide any more useful information, as to why the performance differs so much between datasets. While the authors of the \cite{gztan} admit, that the data has been collected from random sources over the years, low coherence of the dataset should not affect the neural net performance so vastly. 
+
+

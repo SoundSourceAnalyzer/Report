@@ -1,0 +1,21 @@
+An audio track in a digital format is represented by a discrete set of values identifying a sound wave. In order to apply machine learning techniques to a track, identifiers for each track is required. With the use of mathematical transformations like the Fourier transformation and its derivaties a collection of values representing each sample is aquired. In this particular study, the feature extraction process has already been applied. Features represeting each track are listed below.
+
+\begin{enumerate}
+\item Temporal Centroid 
+\item Spectral Centroid average value 
+\item Spectral Centroid variance
+\item Audio Spectrum Envelope (ASE) average values in 34 frequency bands
+\item ASE average value (averaged for all frequency bands)
+\item ASE variance values in 34 frequency bands
+\item averaged ASE variance parameters
+\item Audio Spectrum Centroid – average and variance values
+\item Audio Spectrum Spread – average and variance values
+\item Spectral Flatness Measure (SFM) average values for 24 frequency bands
+\item SFM average value (averaged for all frequency bands)
+\item Spectral Flatness Measure (SFM) variance values for 24 frequency bands
+\item averaged SFM variance parameters
+\item 20 first mel cepstral coefficients average values 
+\item dedicated parameters in time domain based of the analysis of the distribution of the envelope in relation to the rms value.
+\end{enumerate}
+
+There parameters sum up to a total of 191 values used to identify track's musical identity. 
