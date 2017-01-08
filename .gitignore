@@ -160,3 +160,4 @@ pythontex-files-*/
 TSWLatexianTemp*
 further.tex.backup
 paper.pdf
+*.kate-swp
